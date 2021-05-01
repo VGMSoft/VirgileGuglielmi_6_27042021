@@ -1,5 +1,5 @@
 <h1 align="center">Welcome to So_Pekocko 👋</h1>
-<img src="logo.png" alt="logo So Pekocko"/>
+<img align="center" src="logo.png" alt="logo So Pekocko"/>
 <p>
   <img alt="Version" src="https://img.shields.io/badge/version-0.0.0-blue.svg?cacheSeconds=2592000" />
   <a href="https://twitter.com/virgilegug" target="_blank">
