@@ -1,4 +1,4 @@
-const Sauce = require('../models/sauce');
+const Sauce = require('../models/Sauce');
 
 exports.getAllSauce = (req, res, next) => {
     Sauce.find()
@@ -53,7 +53,7 @@ exports.modifySauce = (req, res, next) => {
 
 exports.deleteSauce = (req, res, next) => {
     Sauce.deleteOne({_id: req.params.id})
-        .then(() => res.status(200).json({message: 'Deleted!'}))
+        .then(() => res.status(200).json({message: 'Sauce Deleted!'}))
         .catch(error => res.status(400).json({error: error}))
 }
 

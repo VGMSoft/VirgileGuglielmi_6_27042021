@@ -1,6 +1,8 @@
 const express = require('express')
 const router = express.Router()
 
+const Sauce = require('../models/Sauce')
+
 const auth = require('../middleware/auth')
 
 const sauceCtrl = require('../controllers/sauce')
