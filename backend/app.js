@@ -27,6 +27,11 @@ app.use((req, res, next) => {
 //Parse Request
 app.use(bodyParser.json())
 
+//Passport
+require('./middleware/passport-config')(passport)
+app.use(passport.initialize())
+
+
 //Serving images
 app.use('/images', express.static(path.join(__dirname, 'images')))
 
