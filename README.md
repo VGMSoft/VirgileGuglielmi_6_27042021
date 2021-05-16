@@ -27,17 +27,7 @@ Pour le moment le projet n'est pas déployé. Il est cependant possible de clone
 
 ```sh
 cd  ./frontend/
-```
-
-* Installation des dépendances
-
-```sh
 npm install
-```
-
-* Lancement de l'application Angular
-
-```sh
 ng serve
 ```
 
@@ -45,17 +35,7 @@ ng serve
 
 ```sh
 cd  ./backend/
-```
-
-* Installation des dépendances
-
-```sh
 npm install
-```
-
-* Lancement du serveur Node.js
-
-```sh
 node server
 ```
 
