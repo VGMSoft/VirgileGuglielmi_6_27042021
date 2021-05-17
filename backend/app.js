@@ -8,7 +8,7 @@ const sauceRoutes = require('./routes/sauce')
 const userRoutes = require('./routes/user')
 
 //MONGOOSE
-mongoose.connect('mongodb+srv://rootuser:uBe9Eb6u2ODRVowu@cluster0.vguj2.mongodb.net/SoPekocko?retryWrites=true&w=majority',
+mongoose.connect(`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@${process.env.DB_CLUSTER}.mongodb.net/${process.env.DB_COLLECTION}?retryWrites=true&w=majority`,
   { useNewUrlParser: true,
     useUnifiedTopology: true })
   .then(() => console.log('Connexion à MongoDB réussie !'))
