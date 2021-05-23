@@ -4,7 +4,6 @@ const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
 const path = require('path')
 
-
 //Import Routes
 const sauceRoutes = require('./routes/sauce')
 const userRoutes = require('./routes/user')
@@ -30,6 +29,9 @@ app.use((req, res, next) => {
 
 //Parse Request
 app.use(bodyParser.json())
+//TODO Use the new Express implementation instead of using body-parser middleware
+//app.use(express.json());
+//app.use(express.urlencoded({extended: true}));
 
 //Serving images
 app.use('/images', express.static(path.join(__dirname, 'images')))

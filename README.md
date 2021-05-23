@@ -1,5 +1,7 @@
 <h1 align="center">Welcome to So_Pekocko 👋</h1>
-<img align="center" src="logo.png" alt="logo So Pekocko"/>
+<p align="center">
+    <img src="logo.png" alt="logo So Pekocko"/>
+</p>
 <p>
   <img alt="Version" src="https://img.shields.io/badge/version-0.0.0-blue.svg?cacheSeconds=2592000" />
   <a href="https://twitter.com/virgilegug" target="_blank">
@@ -7,36 +9,40 @@
   </a>
 </p>
 
-> Site de notation de sauces
+> ***Site de notation de sauces***
 
 ## 🎯 Objectif
+
 * Implémenter un modèle logique de données conformément à la réglementation
 * Stocker des données de manière sécurisée
 * Mettre en œuvre des opérations CRUD de manière sécurisée
 
-## Install
+***
+
+## Utilisation
+
+Pour le moment le projet n'est pas déployé. Il est cependant possible de cloner le projet et l'exécuter en local.
 
 **FRONTEND**
-* Installation des dépendances
+
 ```sh
+cd  ./frontend/
 npm install
-```
-* Lancement du serveur Angular
-```sh
 ng serve
 ```
 
 **BACKEND**
-* Installation des dépendances
+
 ```sh
+cd  ./backend/
 npm install
-```
-* Lancement du serveur Node.js
-```sh
 node server
 ```
 
+***
+
 ## Documentation API
+
 |Verbe|Paramètres|Corps de la demande (le cas échéant)|Type de réponse attendue|Fonction
 |---|---|---|---|---|
 |<img alt="POST" src="https://img.shields.io/badge/-POST-blue"/>|/api/auth/signup|{ email: string, password:string }|{ message: string }|Chiffre le mot de passe de l'utilisateur, ajoute l'utilisateur à la base de données|
@@ -48,7 +54,10 @@ node server
 |<img alt="DELETE" src="https://img.shields.io/badge/-DELETE-blue"/>|/api/sauces/:id|_|{ message: Chaîne }|Supprime la sauce avec l'ID fourni.|
 |<img alt="POST" src="https://img.shields.io/badge/-POST-blue"/>|/api/sauces/:id/like|{ userId: Chaîne, j'aime :Nombre }|{ message: Chaîne }|Définit le statut "j'aime" pour userID fourni. Si j'aime = 1, l'utilisateur aime la sauce. Si j'aime = 0, l'utilisateur annule ce qu'il aime ou ce qu'il n'aime pas. Si j'aime = -1, l'utilisateur n'aime pas la sauce. L'identifiant de l'utilisateur doit être ajouté ou supprimé du tableau approprié, en gardant une trace de ses préférences et en l'empêchant d'aimer ou de ne pas aimer la même sauce plusieurs fois. Nombre total de "j'aime" et de "je n'aime pas" à mettre à jour avec chaque "j'aime".|
 
+
+
 ## Author
+
 👤 **Virgile Guglielmi**
 
 * Twitter: [@virgilegug](https://twitter.com/virgilegug)
