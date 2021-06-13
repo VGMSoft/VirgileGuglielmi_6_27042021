@@ -13,6 +13,15 @@ exports.getOneSauce = (req, res, next) => {
     .catch(error => res.status(404).json({error}))
 }
 
+//saniitize string
+function sanityse(input) {
+  const regex = /[@#$%&?|*+)(}{=._<"'^\[\]]/
+  for (let i = 0; i < input.length; i++) {
+    input = input.replace(regex, '•')
+  }
+  return input
+}
+
 exports.createSauce = (req, res, next) => {
   const sauceObject = JSON.parse(req.body.sauce)
   delete sauceObject._id

@@ -9,8 +9,9 @@ const sauceRoutes = require('./routes/sauce')
 const userRoutes = require('./routes/user')
 
 //MONGOOSE
-mongoose.connect(`${process.env.DB_HOST}://${process.env.DB_USER}:${process.env.DB_PASS}@${process.env.DB_CLUSTER}/${process.env.DB_COLLECTION}?retryWrites=true&w=majority`,
+mongoose.connect(`${process.env.DB_HOST}://${process.env.DB_USER}:${process.env.DB_USER_PASS}@${process.env.DB_CLUSTER}/${process.env.DB_COLLECTION}?retryWrites=true&w=majority`,
   {
+    useCreateIndex: true,
     useNewUrlParser: true,
     useUnifiedTopology: true
   })
