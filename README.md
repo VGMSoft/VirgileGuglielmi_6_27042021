@@ -3,7 +3,7 @@
     <img src="logo.png" alt="logo So Pekocko"/>
 </p>
 <p>
-  <img alt="Version" src="https://img.shields.io/badge/version-0.0.0-blue.svg?cacheSeconds=2592000" />
+  <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
   <a href="https://twitter.com/virgilegug" target="_blank">
     <img alt="Twitter: virgilegug" src="https://img.shields.io/twitter/follow/virgilegug.svg?style=social" />
   </a>
@@ -16,6 +16,8 @@
 * Implémenter un modèle logique de données conformément à la réglementation
 * Stocker des données de manière sécurisée
 * Mettre en œuvre des opérations CRUD de manière sécurisée
+
+<a href="./guidelines.pdf" target="blank">GUIDELINES</a>
 
 ***
 
