@@ -46,7 +46,7 @@ node server #(executable dans l'IDE depuis package.json)
 
 ## Documentation API
 
-* [README.md](../backend/README.md)
+* [README.md](https://github.com/VGMSoft/VirgileGuglielmi_6_27042021/blob/master/backend/README.md)
 
 ## Author
 
