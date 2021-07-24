@@ -24,7 +24,7 @@
 ## Utilisation
 
 * Pour le moment le frontend de l'application n'est pas déployé. Il est cependant possible de cloner le projet et de démarrer le serveur Angular en local.
-* L'usage d'un mot de passe complexe est nécessaire pour la connexion à l'application. Dans le cas contraire, la requète renverra un code d'erreur (401 Unauthorized). Le mot de passe doit contenir au moins 8 caractères : minuscules, majuscules, chiffres et caractère spéciaux.
+* ⚠️ L'usage d'un mot de passe complexe est nécessaire pour la connexion à l'application. Dans le cas contraire, la requète renverra un code d'erreur (401 Unauthorized). Le mot de passe doit contenir au moins 8 caractères : minuscules, majuscules, chiffres et caractère spéciaux.
 
 **FRONTEND**
 
