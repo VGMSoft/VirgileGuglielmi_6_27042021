@@ -1,3 +1,6 @@
+<h1 align="center">API Documentation</h1>
+
+
 |Verbe|Paramètres|Corps de la demande (le cas échéant)|Type de réponse attendue|Fonction
 |---|---|---|---|---|
 |<img alt="POST" src="https://img.shields.io/badge/-POST-blue"/>|/api/auth/signup|{ email: string, password:string }|{ message: string }|Chiffre le mot de passe de l'utilisateur, ajoute l'utilisateur à la base de données|
