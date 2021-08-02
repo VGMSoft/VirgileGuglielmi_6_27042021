@@ -29,10 +29,8 @@ app.use((req, res, next) => {
 })
 
 //Parse Request
-app.use(bodyParser.json())
-//TODO Use the new Express implementation instead of using body-parser middleware
-//app.use(express.json());
-//app.use(express.urlencoded({extended: true}));
+app.use(express.json());
+
 
 //Serving images
 app.use('/images', express.static(path.join(__dirname, 'images')))
