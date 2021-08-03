@@ -23,14 +23,15 @@
 
 ## Utilisation
 
-Pour le moment le projet n'est pas déployé. Il est cependant possible de cloner le projet et l'exécuter en local.
+* Pour le moment le frontend de l'application n'est pas déployé. Il est cependant possible de cloner le projet et de démarrer le serveur Angular en local.
+* ⚠️ L'usage d'un mot de passe complexe est nécessaire pour la connexion à l'application. Dans le cas contraire, la requète renverra un code d'erreur (401 Unauthorized). Le mot de passe doit contenir au moins 8 caractères : minuscules, majuscules, chiffres et caractère spéciaux.
 
 **FRONTEND**
 
 ```sh
 cd  ./frontend/
 npm install
-ng serve
+ng serve #(executable dans l'IDE depuis package.json)
 ```
 
 **BACKEND**
@@ -38,25 +39,14 @@ ng serve
 ```sh
 cd  ./backend/
 npm install
-node server
+node server #(executable dans l'IDE depuis package.json)
 ```
 
 ***
 
 ## Documentation API
 
-|Verbe|Paramètres|Corps de la demande (le cas échéant)|Type de réponse attendue|Fonction
-|---|---|---|---|---|
-|<img alt="POST" src="https://img.shields.io/badge/-POST-blue"/>|/api/auth/signup|{ email: string, password:string }|{ message: string }|Chiffre le mot de passe de l'utilisateur, ajoute l'utilisateur à la base de données|
-|<img alt="POST" src="https://img.shields.io/badge/-POST-blue"/>|/api/auth/login|{ email: string, password: string }|{ userId: string, token: string }|Vérifie les informations d'identification de l'utilisateur, en renvoyant l'identifiant userID depuis la base de données et un jeton Web JSON signé(contenant également l'identifiant userID)
-|<img alt="GET" src="https://img.shields.io/badge/-GET-blue"/>|/api/sauces|_|Tableau des sauces|Renvoie le tableau de toutes les sauces dans la base de données|
-|<img alt="GET" src="https://img.shields.io/badge/-GET-blue"/>|/api/sauces/:id|_|Sauce unique|Renvoie la sauce avec l'ID fourni|
-|<img alt="POST" src="https://img.shields.io/badge/-POST-blue"/>|/api/sauces|{ sauce: Chaîne, image: Fichier }|{ message: Chaîne }|Capture et enregistre l'image, analyse la sauce en utilisant une chaîne de caractères et l'enregistre dans la base de données, en définissant correctement son image URL. Remet les sauces aimées et cellesdétestées à 0, et les sauces usersliked et celles usersdisliked aux tableaux vides.|
-|<img alt="PUT" src="https://img.shields.io/badge/-PUT-blue"/>|/api/sauces/:id|SOIT Sauce comme JSON OU { sauce:Chaîne, image: Fichier }|{ message: Chaîne }|Met à jour la sauce avec l'identifiant fourni. Si une image est téléchargée, capturez-la et mettez à jour l'image URL des sauces. Si aucun fichier n'est fourni, les détails de la sauce figurent directement dans le corps de la demande(req.body.name, req.body.heat etc). Si un fichier est fourni, la sauce avec chaîne est en req.body.sauce.|
-|<img alt="DELETE" src="https://img.shields.io/badge/-DELETE-blue"/>|/api/sauces/:id|_|{ message: Chaîne }|Supprime la sauce avec l'ID fourni.|
-|<img alt="POST" src="https://img.shields.io/badge/-POST-blue"/>|/api/sauces/:id/like|{ userId: Chaîne, j'aime :Nombre }|{ message: Chaîne }|Définit le statut "j'aime" pour userID fourni. Si j'aime = 1, l'utilisateur aime la sauce. Si j'aime = 0, l'utilisateur annule ce qu'il aime ou ce qu'il n'aime pas. Si j'aime = -1, l'utilisateur n'aime pas la sauce. L'identifiant de l'utilisateur doit être ajouté ou supprimé du tableau approprié, en gardant une trace de ses préférences et en l'empêchant d'aimer ou de ne pas aimer la même sauce plusieurs fois. Nombre total de "j'aime" et de "je n'aime pas" à mettre à jour avec chaque "j'aime".|
-
-
+* [README.md](https://github.com/VGMSoft/VirgileGuglielmi_6_27042021/blob/master/backend/README.md)
 
 ## Author
 
