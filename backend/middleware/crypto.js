@@ -2,7 +2,6 @@ require('dotenv').config()
 const algorithm = `${process.env.CRYPTO_ALGORITHM}`
 const secretKey = `${process.env.CRYPTO_KEY}`
 const iv = Buffer.from(`${process.env.CRYPTO_IV}`, 'hex')
-
 const crypto = require('crypto')
 
 const encrypt = (text) => {

@@ -1,12 +1,14 @@
 require('dotenv').config()
 const express = require('express')
-const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
 const path = require('path')
+const cors = require('cors')
+
+const helmet = require("helmet")
 
 //Import Routes
-const sauceRoutes = require('./routes/sauce')
-const userRoutes = require('./routes/user')
+const sauceRoutes = require('./routes/sauceRoute')
+const userRoutes = require('./routes/userRoute')
 
 //MONGOOSE
 mongoose.connect(`${process.env.DB_HOST}://${process.env.DB_USER}:${process.env.DB_USER_PASS}@${process.env.DB_CLUSTER}/${process.env.DB_COLLECTION}?retryWrites=true&w=majority`,
@@ -20,7 +22,12 @@ mongoose.connect(`${process.env.DB_HOST}://${process.env.DB_USER}:${process.env.
 
 const app = express()
 
-//HEADERS
+//Cors
+let corsOptions = {origin: `${process.env.CORS_ORIGIN}`}
+app.use(cors({corsOptions}))
+
+//Headers
+app.use(helmet())
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*')
   res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content, Accept, Content-Type, Authorization')
@@ -29,7 +36,7 @@ app.use((req, res, next) => {
 })
 
 //Parse Request
-app.use(express.json());
+app.use(express.json())
 
 
 //Serving images

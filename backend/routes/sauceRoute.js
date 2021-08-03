@@ -4,7 +4,7 @@ const router = express.Router()
 const auth = require('../middleware/auth')
 const multer = require('../middleware/multer-config.js')
 
-const sauceCtrl = require('../controllers/sauce')
+const sauceCtrl = require('../controllers/sauceController')
 
 //Protected routes
 router.get('/', auth, sauceCtrl.getAllSauce)
