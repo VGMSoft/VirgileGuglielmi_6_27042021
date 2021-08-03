@@ -1,5 +1,7 @@
-const Sauce = require('../models/Sauce')
+const Sauce = require('../models/sauceModel')
 const fs = require('fs')
+const {sanitize} = require('../middleware/sanitize')
+
 
 exports.getAllSauce = (req, res, next) => {
   Sauce.find()
@@ -13,17 +15,8 @@ exports.getOneSauce = (req, res, next) => {
     .catch(error => res.status(404).json({error}))
 }
 
-//saniitize string
-function sanityse(input) {
-  const regex = /[@#$%&?|*+)(}{=._<"'^\[\]]/
-  for (let i = 0; i < input.length; i++) {
-    input = input.replace(regex, '•')
-  }
-  return input
-}
-
 exports.createSauce = (req, res, next) => {
-  const sauceObject = JSON.parse(req.body.sauce)
+  const sauceObject = sanitize(JSON.parse(req.body.sauce))
   delete sauceObject._id
   const sauce = new Sauce({
     ...sauceObject,
@@ -40,11 +33,11 @@ exports.createSauce = (req, res, next) => {
 
 exports.modifySauce = (req, res, next) => {
   const saucePicture = req.file
-    ? {
+    ? sanitize({
       ...JSON.parse(req.body.sauce),
       imageUrl: `${req.protocol}://${req.get('host')}/images/${req.file.filename}`
-    }
-    : {...req.body}
+    })
+    : sanitize({...req.body})
   Sauce.updateOne({_id: req.params.id}, {...saucePicture, _id: req.params.id})
     .then(() => res.status(201).json({message: 'Sauce updated successfully!'}))
     .catch(error => res.status(400).json({error: error}))
@@ -126,8 +119,6 @@ exports.opinionOnSauce = (req, res, next) => {
       break
 
     default:
-//TODO return ?
-//res.status(500).json({error})
       break
   }
 }
