@@ -1,7 +1,6 @@
 const bcrypt = require('bcrypt')
 const User = require('../models/userModel')
 const jwt = require('jsonwebtoken')
-
 const { encrypt, decrypt } = require('../middleware/crypto')
 
 exports.signup = (req, res, next) => {
@@ -26,7 +25,7 @@ exports.signup = (req, res, next) => {
             })
             .catch(error => res.status(500).json({error}))
         } else {
-          res.status(400).json({message: 'Mot de passe non conforme !'})
+          res.status(400).json({message: 'Le mot de passe doit comporter minimum 8 caractères et comprendre au moins 1 majuscule, 1 chiffre et 1 caractère spécial!'})
         }
       }
     })
