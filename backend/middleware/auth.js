@@ -11,8 +11,8 @@ module.exports = (req, res, next) => {
     } else {
       next();
     }
-  } catch {
+  } catch (err) {
     //invalid or expired token
-    res.status(498).json({error: new Error('Invalid request!')})
+    res.status(498).json({error: new Error(err)})
   }
 }
