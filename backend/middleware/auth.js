@@ -12,7 +12,7 @@ module.exports = (req, res, next) => {
       next();
     }
   } catch (err) {
-    //invalid or expired token
+    //invalid or expired token code
     res.status(498).json({error: new Error(err)})
   }
 }
